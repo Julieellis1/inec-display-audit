@@ -3,69 +3,99 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Abia State: display vs June 2021 | INEC Display Audit</title>
+<title>A citizen audit of INEC&#x27;s polling unit list | INEC Display Audit</title>
 <link rel="stylesheet" href="assets/style.css">
-<script src="assets/search.js" defer></script>
+
 </head>
 <body>
 <header class="site"><div class="wrap">
 <h1><a href="index.html">INEC Display Audit</a></h1>
-<nav><a href="index.html">Abia</a><a href="method.html">Method</a><a href="index.html#downloads">Downloads</a></nav>
+<nav><a href="index.html">Home</a><a href="abia.html">Abia</a><a href="method.html">Method</a></nav>
 </div></header>
 <main><div class="wrap">
 
 <div class="hero">
-<h2>Abia State: the display portal shows exactly the polling units from June 2021</h2>
-<p class="big">4,062 display &nbsp;=&nbsp; 4,062 in June 2021 &nbsp;&middot;&nbsp; Change: 0</p>
-<p>We read every polling unit on INEC's display portal for Abia State, all 17 local government areas, and compared the list with the June 2021 expansion list that was used for the 2023 election. The totals match exactly, in every LGA and in every ward. On the count test, there are no extra polling units in Abia.</p>
-<p>That is a count result, not a clean bill of health. The names on the portals still carry real problems: repeated names, missing numbers, spelling variants, and whole name lists that do not agree between the two portals. Each LGA page lists them with codes, so you can check them yourself.</p>
+<h2>A citizen audit of INEC's polling unit list</h2>
+<p>In October 2026, INEC published the preliminary voter register online. Within days, citizens found photographs that looked AI generated, names that made no sense, and polling units that did not look real. INEC admitted some AI photographs entered the register through registration officers' logins. A separate claim said 453 polling units were created in secret.</p>
+<p>This site checks the one thing that can be checked openly: the list of polling units itself. We read the display portal, state by state, and compare it with the June 2021 list that was used for the 2023 election. Every figure here can be checked against the files we publish.</p>
 </div>
 
 <div class="card">
-<h3>Search all 4,062 polling units</h3>
-<input type="search" id="q" placeholder="Type a code, a name, a ward or an LGA, for example 01-02-03-045 or EKEOHA MARKET" autocomplete="off">
-<p class="searchhint">Search runs on your device, over the display portal list. Results link to the LGA page for that unit.</p>
-<div id="results"></div>
+<h3>Aim</h3>
+<p>To give citizens a clean, checkable record of the polling units on INEC's display portal, so that any extra, duplicated or misplaced unit can be proven or ruled out with evidence, not rumour.</p>
 </div>
 
 <div class="card">
-<h3>Abia by local government area</h3>
-<div class="tablewrap"><table>
-<tr><th>Local government area</th><th class="num">Wards</th><th class="num">Display, 6 Nov 2026</th><th class="num">June 2021 list</th><th class="num">Change</th></tr>
-<tr><td><a href="lga/aba-north.html">Aba North</a></td><td class="num">12</td><td class="num">503</td><td class="num">503</td><td class="num">0</td></tr>
-<tr><td><a href="lga/aba-south.html">Aba South</a></td><td class="num">12</td><td class="num">518</td><td class="num">518</td><td class="num">0</td></tr>
-<tr><td><a href="lga/arochukwu.html">Arochukwu</a></td><td class="num">11</td><td class="num">183</td><td class="num">183</td><td class="num">0</td></tr>
-<tr><td><a href="lga/bende.html">Bende</a></td><td class="num">13</td><td class="num">214</td><td class="num">214</td><td class="num">0</td></tr>
-<tr><td><a href="lga/ikwuano.html">Ikwuano</a></td><td class="num">10</td><td class="num">143</td><td class="num">143</td><td class="num">0</td></tr>
-<tr><td><a href="lga/isiala-ngwa-north.html">Isiala Ngwa North</a></td><td class="num">10</td><td class="num">185</td><td class="num">185</td><td class="num">0</td></tr>
-<tr><td><a href="lga/isiala-ngwa-south.html">Isiala Ngwa South</a></td><td class="num">10</td><td class="num">194</td><td class="num">194</td><td class="num">0</td></tr>
-<tr><td><a href="lga/isuikwuato.html">Isuikwuato</a></td><td class="num">10</td><td class="num">149</td><td class="num">149</td><td class="num">0</td></tr>
-<tr><td><a href="lga/obingwa.html">Obingwa</a></td><td class="num">11</td><td class="num">312</td><td class="num">312</td><td class="num">0</td></tr>
-<tr><td><a href="lga/ohafia.html">Ohafia</a></td><td class="num">11</td><td class="num">282</td><td class="num">282</td><td class="num">0</td></tr>
-<tr><td><a href="lga/osisioma-ngwa.html">Osisioma Ngwa</a></td><td class="num">10</td><td class="num">301</td><td class="num">301</td><td class="num">0</td></tr>
-<tr><td><a href="lga/ugwunagbo.html">Ugwunagbo</a></td><td class="num">10</td><td class="num">160</td><td class="num">160</td><td class="num">0</td></tr>
-<tr><td><a href="lga/ukwa-east.html">Ukwa East</a></td><td class="num">10</td><td class="num">85</td><td class="num">85</td><td class="num">0</td></tr>
-<tr><td><a href="lga/ukwa-west.html">Ukwa West</a></td><td class="num">10</td><td class="num">129</td><td class="num">129</td><td class="num">0</td></tr>
-<tr><td><a href="lga/umuahia-north.html">Umuahia North</a></td><td class="num">12</td><td class="num">378</td><td class="num">378</td><td class="num">0</td></tr>
-<tr><td><a href="lga/umuahia-south.html">Umuahia South</a></td><td class="num">10</td><td class="num">173</td><td class="num">173</td><td class="num">0</td></tr>
-<tr><td><a href="lga/umu-nneochi.html">Umu-Nneochi</a></td><td class="num">12</td><td class="num">153</td><td class="num">153</td><td class="num">0</td></tr>
-
-<tr><th>Abia total</th><th class="num">184</th><th class="num">4,062</th><th class="num">4,062</th><th class="num">0</th></tr>
-</table></div>
-<p class="searchhint">The 2015 total for Abia was 2,675. Comparing with 2015 would mix the official 2021 expansion in with any later change, so the test that matters is display against 2021. See the <a href="method.html">method page</a>.</p>
+<h3>Objectives</h3>
+<ol class="obj">
+<li>Compare the display portal's polling unit list with the June 2021 list in every state, local government area and ward.</li>
+<li>Record every repeated name, missing number and spelling variant with its polling unit code, so anyone can verify it on the portal.</li>
+<li>Publish the full data and the method, so the findings can be checked independently by any citizen, observer or newsroom.</li>
+<li>Keep verified counts separate from unverified flags, and never claim a national figure from one state or one ward.</li>
+<li>Put the verified findings to INEC and observers in writing, with a demand for a published cleanup list before the final register is certified on 15 December 2026.</li>
+</ol>
 </div>
 
-<div class="card" id="downloads">
+<div class="card">
+<h3>How it works</h3>
+<ul class="tight">
+<li><b>Read the display portal.</b> State, LGA, ward, polling unit name and code, from the dropdowns only. No register is opened and no voter data is collected.</li>
+<li><b>Compare with June 2021.</b> INEC's own polling unit locator carries the 2021 list. Counts, codes and names are compared unit by unit.</li>
+<li><b>Recheck what disagrees.</b> A large name difference is treated as a collection error until both portals are checked live at the same codes.</li>
+<li><b>Publish everything.</b> The workbook and the CSV files are on each state page. Read the full method on the <a href="method.html">method page</a>.</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Choose a state</h3>
+<p>Abia is the first state audited. Each new state is added the same way, with the same checks.</p>
+<div class="stategrid">
+<a class="statebtn live" href="abia.html">Abia<span class="sub">Audited, 4,062 units, change 0</span></a>
+<span class="statebtn soon">Adamawa<span class="sub">Not yet audited</span></span>
+<span class="statebtn soon">Akwa Ibom<span class="sub">Not yet audited</span></span>
+<span class="statebtn soon">Anambra<span class="sub">Not yet audited</span></span>
+<span class="statebtn soon">Bauchi<span class="sub">Not yet audited</span></span>
+<span class="statebtn soon">Bayelsa<span class="sub">Not yet audited</span></span>
+<span class="statebtn soon">Benue<span class="sub">Not yet audited</span></span>
+<span class="statebtn soon">Borno<span class="sub">Not yet audited</span></span>
+<span class="statebtn soon">Cross River<span class="sub">Not yet audited</span></span>
+<span class="statebtn soon">Delta<span class="sub">Not yet audited</span></span>
+<span class="statebtn soon">Ebonyi<span class="sub">Not yet audited</span></span>
+<span class="statebtn soon">Edo<span class="sub">Not yet audited</span></span>
+<span class="statebtn soon">Ekiti<span class="sub">Not yet audited</span></span>
+<span class="statebtn soon">Enugu<span class="sub">Not yet audited</span></span>
+<span class="statebtn soon">FCT Abuja<span class="sub">Not yet audited</span></span>
+<span class="statebtn soon">Gombe<span class="sub">Not yet audited</span></span>
+<span class="statebtn soon">Imo<span class="sub">Not yet audited</span></span>
+<span class="statebtn soon">Jigawa<span class="sub">Not yet audited</span></span>
+<span class="statebtn soon">Kaduna<span class="sub">Not yet audited</span></span>
+<span class="statebtn soon">Kano<span class="sub">Not yet audited</span></span>
+<span class="statebtn soon">Katsina<span class="sub">Not yet audited</span></span>
+<span class="statebtn soon">Kebbi<span class="sub">Not yet audited</span></span>
+<span class="statebtn soon">Kogi<span class="sub">Not yet audited</span></span>
+<span class="statebtn soon">Kwara<span class="sub">Not yet audited</span></span>
+<span class="statebtn soon">Lagos<span class="sub">Not yet audited</span></span>
+<span class="statebtn soon">Nasarawa<span class="sub">Not yet audited</span></span>
+<span class="statebtn soon">Niger<span class="sub">Not yet audited</span></span>
+<span class="statebtn soon">Ogun<span class="sub">Not yet audited</span></span>
+<span class="statebtn soon">Ondo<span class="sub">Not yet audited</span></span>
+<span class="statebtn soon">Osun<span class="sub">Not yet audited</span></span>
+<span class="statebtn soon">Oyo<span class="sub">Not yet audited</span></span>
+<span class="statebtn soon">Plateau<span class="sub">Not yet audited</span></span>
+<span class="statebtn soon">Rivers<span class="sub">Not yet audited</span></span>
+<span class="statebtn soon">Sokoto<span class="sub">Not yet audited</span></span>
+<span class="statebtn soon">Taraba<span class="sub">Not yet audited</span></span>
+<span class="statebtn soon">Yobe<span class="sub">Not yet audited</span></span>
+<span class="statebtn soon">Zamfara<span class="sub">Not yet audited</span></span>
+
+</div>
+</div>
+
+<div class="card">
 <h3>Downloads</h3>
-<p>Check the work yourself. The workbook holds every LGA, the 2021 comparison and the error lists. The CSV files hold one list each.</p>
-<p><a class="btn" href="data/Abia-Display-Audit-2026-11-06-v41.xlsx">Download the full workbook (XLSX)</a>
+<p>The full Abia workbook holds every LGA, the 2021 comparison and the error lists.</p>
+<p><a class="btn" href="data/Abia-Display-Audit-2026-11-06-v41.xlsx">Download the Abia workbook (XLSX)</a>
 <a class="btn ghost" href="method.html">Read the method</a></p>
-<p>Per-LGA CSV files (display list and 2021 list) are on each <a href="#lga-list">LGA page</a>.</p>
-</div>
-
-<div class="card" id="lga-list">
-<h3>All 17 LGA pages</h3>
-<p><a href="lga/aba-north.html">Aba North</a> &nbsp;|&nbsp; <a href="lga/aba-south.html">Aba South</a> &nbsp;|&nbsp; <a href="lga/arochukwu.html">Arochukwu</a> &nbsp;|&nbsp; <a href="lga/bende.html">Bende</a> &nbsp;|&nbsp; <a href="lga/ikwuano.html">Ikwuano</a> &nbsp;|&nbsp; <a href="lga/isiala-ngwa-north.html">Isiala Ngwa North</a> &nbsp;|&nbsp; <a href="lga/isiala-ngwa-south.html">Isiala Ngwa South</a> &nbsp;|&nbsp; <a href="lga/isuikwuato.html">Isuikwuato</a> &nbsp;|&nbsp; <a href="lga/obingwa.html">Obingwa</a> &nbsp;|&nbsp; <a href="lga/ohafia.html">Ohafia</a> &nbsp;|&nbsp; <a href="lga/osisioma-ngwa.html">Osisioma Ngwa</a> &nbsp;|&nbsp; <a href="lga/ugwunagbo.html">Ugwunagbo</a> &nbsp;|&nbsp; <a href="lga/ukwa-east.html">Ukwa East</a> &nbsp;|&nbsp; <a href="lga/ukwa-west.html">Ukwa West</a> &nbsp;|&nbsp; <a href="lga/umuahia-north.html">Umuahia North</a> &nbsp;|&nbsp; <a href="lga/umuahia-south.html">Umuahia South</a> &nbsp;|&nbsp; <a href="lga/umu-nneochi.html">Umu-Nneochi</a></p>
 </div>
 
 </div></main>
