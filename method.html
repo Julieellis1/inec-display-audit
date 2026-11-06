@@ -4,78 +4,133 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Method | INEC Display Audit</title>
-<link rel="stylesheet" href="assets/style.css">
-
+<meta name="description" content="Four steps, the same for every state: read the display portal, compare with June 2021, recheck what disagrees, publish everything.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400&display=swap">
+<link rel="stylesheet" href="assets/hark.css">
+<link rel="stylesheet" href="assets/hark-hero.css">
+<link rel="stylesheet" href="assets/site.css">
+<script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
-<header class="site"><div class="wrap">
-<h1><a href="index.html">INEC Display Audit</a></h1>
-<nav><a href="index.html">Home</a><a href="abia.html">Abia</a><a href="method.html">Method</a></nav>
-</div></header>
-<main><div class="wrap">
+<div class="page" id="top">
+<header class="nav glass" data-auto data-root=""></header>
+<main class="main">
 
-<div class="hero">
-<h2>Method: what was checked, and what was not</h2>
-<p>This audit checks polling unit <b>structure only</b>: the list of polling units on INEC's display portal, against the list from the June 2021 expansion. It does not look at voter names, photos or register entries, and it does not use the "View register" button. Nothing here can identify a voter.</p>
+<section class="section" id="steps" data-nav="Steps">
+  <div class="head">
+    <p class="head__eyebrow">How the audit works</p>
+    <h2>Four steps, the same for every state.</h2>
+  </div>
+  <div class="steps">
+    <article class="step">
+      <div class="step__intro">
+        <p class="step__num">01</p>
+      </div>
+      <div>
+        <h3>Read the display portal</h3>
+        <p>State, LGA, ward, polling unit name and code, from the dropdowns only. No register is opened, no voter data collected.</p>
+        <p>This audit checks polling unit <b>structure only</b>: the list of polling units on INEC's display portal, against the list from the June 2021 expansion. It does not look at voter names, photos or register entries, and it does not use the "View register" button. Nothing here can identify a voter.</p>
+      </div>
+    </article>
+    <article class="step">
+      <div class="step__intro">
+        <p class="step__num">02</p>
+      </div>
+      <div>
+        <h3>Compare with June 2021</h3>
+        <p>INEC's own locator (<a class="link" href="https://cvr.inecnigeria.org/pu" target="_blank" rel="noopener">cvr.inecnigeria.org/pu</a>) carries the 2021 list. Counts, codes and names are compared unit by unit.</p>
+        <p>On 16 June 2021 INEC converted 56,872 voting points into full polling units. The national total went from 119,974 to 176,846, and Abia went from 2,675 to 4,062. That 176,846 list was used for the 2023 election and is the total INEC still publishes. Comparing the 2026 display with the 2015 directory would mix the official 2021 expansion in with any later change, so the test that can point to secret creation is display against 2021 only.</p>
+        <p>The decisive test for Abia was therefore simple: does the full display total equal 4,062? It does, exactly, in every LGA and every ward.</p>
+      </div>
+      <dl class="step__panel">
+        <dt>Why 2021</dt>
+        <dd>On 16 June 2021 INEC converted 56,872 voting points into polling units. The national total went from 119,974 to 176,846; Abia from 2,675 to 4,062.</dd>
+        <dt>Why not 2015</dt>
+        <dd>It would mix that official expansion with any later change.</dd>
+      </dl>
+    </article>
+    <article class="step">
+      <div class="step__intro">
+        <p class="step__num">03</p>
+      </div>
+      <div>
+        <h3>Recheck what disagrees</h3>
+        <p>A large name difference is treated as a collection error until both portals are checked live at the same codes.</p>
+        <p>Three display lists (Umuahia North, Aba North, Aba South) were first built by generating names from a pattern instead of copying them. Live spot rechecks proved them wrong, so all three were recollected live from the display portal, verbatim, on 6 November 2026. The old names are withdrawn.</p>
+        <p>Several 2021 lists (Ohafia, Osisioma Ngwa, Umuahia South, Aba North, Aba South, and five wards of Umuahia North) disagree with the recollected display at most codes. Spot rechecks on both portals in Ohafia, Osisioma and Umuahia South showed the two portals agreeing at every code sampled, so those 2021 lists are treated as unreliable until they are recollected. They are still published as downloads, marked as such.</p>
+        <p>Four 2021 lists (Ugwunagbo, Ukwa West, Ukwa East, Umu-Nneochi) match the display at every code. In Aba South, one ward (Ohazu II) agrees across the old display list, the 2021 list and the recollection at all 30 codes.</p>
+        <p>Rule learned and now followed: a name list is only trusted when it is copied verbatim, and a large name difference between two runs is treated as a collection error until a live spot recheck on both portals says otherwise.</p>
+      </div>
+    </article>
+    <article class="step">
+      <div class="step__intro">
+        <p class="step__num">04</p>
+      </div>
+      <div>
+        <h3>Publish everything</h3>
+        <p>A workbook and CSVs for every state and LGA. Corrections are published, not hidden: when a list is found wrong, the old version stays in the workbook history and the correction is noted on the page.</p>
+        <p>If you spot an error, open display.inecnigeria.org, pick the state, LGA and ward, and find the code in the polling unit dropdown. If what you see differs from this site, tell us the code, what the portal shows, and the date you checked, so the record can be corrected with the same evidence standard used here.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="section" id="principles" data-nav="Principles">
+  <div class="head">
+    <p class="head__eyebrow">Our principles</p>
+    <h2>Aim: a clean, checkable record of polling units on INEC's display portal, so any extra, duplicated or misplaced unit can be proven or ruled out with evidence, not rumour.</h2>
+  </div>
+  <div class="cards">
+    <div><span class="x-num">01</span><h3>Compare everything</h3><p>Every state, LGA and ward against the June 2021 list.</p></div>
+    <div><span class="x-num">02</span><h3>Record every anomaly</h3><p>Every repeated name, missing number and spelling variant, with its code.</p></div>
+    <div><span class="x-num">03</span><h3>Publish it all</h3><p>Full data and method, for independent checking.</p></div>
+    <div><span class="x-num">04</span><h3>Verified stays separate</h3><p>Verified counts are kept apart from unverified flags. Never a national figure from one state or ward.</p></div>
+    <div><span class="x-num">05</span><h3>Put it to INEC in writing</h3><p>Verified findings go to INEC and observers, demanding a published cleanup list before certification on 15 December 2026.</p></div>
+  </div>
+</section>
+
+<section class="section" id="flags" data-nav="Flags">
+  <div class="head">
+    <p class="head__eyebrow">What counts as a flag</p>
+    <h2>A flag is a question for INEC, not a verdict.</h2>
+  </div>
+  <div class="prose">
+    <ul>
+      <li><b>A repeated name</b> at two codes is a flag to put to INEC, not proof of duplication. The same school or hall can legitimately host several polling units, and the portal itself repeats venue names with different numerals.</li>
+      <li><b>A missing number</b> in a ward sequence is a flag, not proof a unit was deleted. Only two exist in Abia: Ariaria Market 058 and Eziama 057 in Aba North.</li>
+      <li><b>A spelling variant</b> (PLOY for POLY, CIVI C CENTRE, SCHL for SCHOOL) is a data quality problem, not proof of fraud. It makes matching hard and it is listed so it can be fixed.</li>
+      <li><b>A name list that disagrees between the two portals</b> is a collection problem until both portals are rechecked live at the same codes.</li>
+      <li><b>No national percentage</b> is claimed here. Abia is one state, and a rate found in one ward cannot be stretched across the country.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section" id="sources" data-nav="Sources">
+  <div class="head">
+    <p class="head__eyebrow">Sources and dates</p>
+    <h2>Where the data came from.</h2>
+  </div>
+  <div class="prose">
+    <ul>
+      <li>Display portal: display.inecnigeria.org, read 6 November 2026, signed in as a citizen account.</li>
+      <li>2021 locator: cvr.inecnigeria.org/pu, read 6 November 2026, no sign-in.</li>
+      <li>June 2021 expansion: INEC announcement 16 June 2021, reported by The Cable and Daily Trust; INEC polling units page still shows 176,846.</li>
+      <li>Abia 2021 total 4,062: INEC via NAN and Pulse; BusinessDay research from 4,062 polling units in Abia.</li>
+      <li>2015 directory totals are history only, from the INEC Directory of Polling Units, revised January 2015.</li>
+    </ul>
+  </div>
+</section>
+
+</main>
+<footer class="foot">
+<p>Structure only: polling unit codes and names as shown on the portals. No voter names, photos or register entries are published. Sources: <a class="link" href="https://display.inecnigeria.org" target="_blank" rel="noopener">display.inecnigeria.org</a> and <a class="link" href="https://cvr.inecnigeria.org/pu" target="_blank" rel="noopener">cvr.inecnigeria.org/pu</a>, read 6 November 2026. Independent citizen project, not affiliated with INEC.</p>
+<nav aria-label="Back to sections" data-auto></nav>
+<a class="badge" href="https://hark.com/" target="_blank" rel="noopener"><span class="hark-mark"></span><span>built by hark</span></a>
+</footer>
 </div>
+<script src="assets/hark.js"></script>
 
-<div class="card">
-<h3>1. The two sources</h3>
-<ul class="tight">
-<li><b>Display portal</b>, display.inecnigeria.org: the preliminary register INEC put online on 26 to 27 October 2026. We read the "Find your polling unit" dropdowns: state, LGA, ward, polling unit name and code. No register was opened.</li>
-<li><b>2021 locator</b>, cvr.inecnigeria.org/pu: INEC's own polling unit locator, which carries the list from the June 2021 expansion. No sign-in is needed there.</li>
-</ul>
-</div>
-
-<div class="card">
-<h3>2. The baseline that matters is June 2021</h3>
-<p>On 16 June 2021 INEC converted 56,872 voting points into full polling units. The national total went from 119,974 to 176,846, and Abia went from 2,675 to 4,062. That 176,846 list was used for the 2023 election and is the total INEC still publishes. Comparing the 2026 display with the 2015 directory would mix the official 2021 expansion in with any later change, so the test that can point to secret creation is display against 2021 only.</p>
-<p>The decisive test for Abia was therefore simple: does the full display total equal 4,062? It does, exactly, in every LGA and every ward.</p>
-</div>
-
-<div class="card">
-<h3>3. How the names were collected, and what went wrong</h3>
-<p>The first pass collected all 17 LGAs from the display portal and all 17 from the 2021 locator, one LGA at a time. Counts and codes matched everywhere. But the names did not always match, and the reason turned out to be collection error, not portal disagreement:</p>
-<ul class="tight">
-<li>Three display lists (Umuahia North, Aba North, Aba South) were built by generating names from a pattern instead of copying them. Live spot rechecks proved them wrong, so all three were recollected live from the display portal, verbatim, on 6 November 2026. The old names are withdrawn.</li>
-<li>Several 2021 lists (Ohafia, Osisioma Ngwa, Umuahia South, Aba North, Aba South, and five wards of Umuahia North) disagree with the recollected display at most codes. Spot rechecks on both portals in Ohafia, Osisioma and Umuahia South showed the two portals agreeing at every code sampled, so those 2021 lists are treated as unreliable until they are recollected. They are still published as downloads, marked as such.</li>
-<li>Four 2021 lists (Ugwunagbo, Ukwa West, Ukwa East, Umu-Nneochi) match the display at every code. In Aba South, one ward (Ohazu II) agrees across the old display list, the 2021 list and the recollection at all 30 codes.</li>
-</ul>
-<p>Rule learned and now followed: a name list is only trusted when it is copied verbatim, and a large name difference between two runs is treated as a collection error until a live spot recheck on both portals says otherwise.</p>
-</div>
-
-<div class="card">
-<h3>4. What counts as a flag, and what does not</h3>
-<ul class="tight">
-<li><b>A repeated name</b> at two codes is a flag to put to INEC, not proof of duplication. The same school or hall can legitimately host several polling units, and the portal itself repeats venue names with different numerals.</li>
-<li><b>A missing number</b> in a ward sequence is a flag, not proof a unit was deleted. Only two exist in Abia: Ariaria Market 058 and Eziama 057 in Aba North.</li>
-<li><b>A spelling variant</b> (PLOY for POLY, CIVI C CENTRE, SCHL for SCHOOL) is a data quality problem, not proof of fraud. It makes matching hard and it is listed so it can be fixed.</li>
-<li><b>A name list that disagrees between the two portals</b> is a collection problem until both portals are rechecked live at the same codes.</li>
-<li><b>No national percentage</b> is claimed here. Abia is one state, and a rate found in one ward cannot be stretched across the country.</li>
-</ul>
-</div>
-
-<div class="card">
-<h3>5. If you spot an error</h3>
-<p>Every unit on this site carries its code exactly as shown on the portal. To check one, open display.inecnigeria.org, pick Abia, the LGA and the ward, and find the code in the polling unit dropdown. If what you see differs from this site, tell us the code, what the portal shows, and the date you checked, so the record can be corrected with the same evidence standard used here.</p>
-<p>Corrections are published, not hidden: when a list is found wrong, the old version stays in the workbook history and the correction is noted on the page.</p>
-</div>
-
-<div class="card">
-<h3>6. Sources and dates</h3>
-<ul class="tight">
-<li>Display portal: display.inecnigeria.org, read 6 November 2026, signed in as a citizen account.</li>
-<li>2021 locator: cvr.inecnigeria.org/pu, read 6 November 2026, no sign-in.</li>
-<li>June 2021 expansion: INEC announcement 16 June 2021, reported by The Cable and Daily Trust; INEC polling units page still shows 176,846.</li>
-<li>Abia 2021 total 4,062: INEC via NAN and Pulse; BusinessDay research from 4,062 polling units in Abia.</li>
-<li>2015 directory totals are history only, from the INEC Directory of Polling Units, revised January 2015.</li>
-</ul>
-</div>
-
-</div></main>
-<footer><div class="wrap">
-<p>Citizen audit of polling unit structure on INEC's display portal, compared with the June 2021 list. Structure only: polling unit codes and names as shown on the portals. No voter names, photos or register entries are published here.</p>
-<p>Data collected 6 November 2026 from display.inecnigeria.org and cvr.inecnigeria.org/pu. Full workbook and CSV files are linked on each page so anyone can check the work.</p>
-</div></footer>
 </body>
 </html>
