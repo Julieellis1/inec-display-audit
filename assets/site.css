@@ -1,7 +1,7 @@
 /* Site additions on top of the Hark design system. */
 .seg a.seg__brand { font-weight: 600; color: var(--text-primary-on); }
 .chip.x-flag::before { background: var(--fill-system-orange); box-shadow: none; }
-.chip.x-recheck::before { box-shadow: inset 0 0 0 1.5px var(--fill-system-orange); }
+.chip.x-multi::before { box-shadow: inset 0 0 0 1.5px var(--fill-system-orange); }
 .site-search {
   width: 100%; max-width: 560px; min-height: 44px;
   padding: 0 16px; border-radius: 100px;
@@ -92,7 +92,7 @@
 
       /* Status chips */
       .chip.x-flag::before { background: var(--fill-system-orange); box-shadow: none; }
-      .chip.x-recheck::before { box-shadow: inset 0 0 0 1.5px var(--fill-system-orange); }
+            .chip.x-multi::before { box-shadow: inset 0 0 0 1.5px var(--fill-system-orange); }
 
       /* Collapsible LGA table on phones */
       .x-more { display: none; }

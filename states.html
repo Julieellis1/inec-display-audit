@@ -42,7 +42,6 @@
               <p class="x-chart__take">Abia and Edo audited · 35 to go</p>
               <ul class="x-legend" aria-label="Legend">
                 <li><i class="x-key-done"></i>Audited</li>
-                <li><i class="x-key-next"></i>Up next</li>
                 <li><i class="x-key-not"></i>Not yet audited</li>
               </ul>
               <p class="fineprint">Source: display.inecnigeria.org and cvr.inecnigeria.org/pu, read 6 November 2026</p>
@@ -106,16 +105,12 @@
 
         function show(s, btn) {
           tiles.forEach(function (t) { if (t.tagName === "BUTTON") t.setAttribute("aria-pressed", t === btn); });
-          if (s[4] === "next") {
-            panel.innerHTML = '<p class="x-num">Up next</p><h3></h3><p>Collection is under way.</p><a class="btn" href="' + ABIA + '">See the first result: Abia</a>';
-          } else {
-            panel.innerHTML = '<p class="x-num">Not yet audited</p><h3></h3><p>Not yet audited. Each state is checked the same way, with the same tests.</p><a class="btn" href="' + ABIA + '">See the first result: Abia</a>';
-          }
+          panel.innerHTML = '<p class="x-num">Not yet audited</p><h3></h3><p>Not yet audited. Each state is checked the same way, with the same tests.</p><a class="btn" href="' + ABIA + '">See the first result: Abia</a>';
           panel.querySelector("h3").textContent = s[0];
         }
 
         S.forEach(function (s) {
-          var done = s[4] === "done", next = s[4] === "next", el;
+          var done = s[4] === "done", el;
           if (done) {
             var d = DONE[s[0]];
             el = document.createElement("a");
@@ -128,9 +123,9 @@
           } else {
             el = document.createElement("button");
             el.type = "button";
-            el.className = next ? "x-tile is-next" : "x-tile";
-            el.title = s[0] + (next ? ": up next" : ": not yet audited");
-            el.setAttribute("aria-label", s[0] + (next ? ", up next" : ", not yet audited"));
+            el.className = "x-tile";
+            el.title = s[0] + ": not yet audited";
+            el.setAttribute("aria-label", s[0] + ", not yet audited");
             el.setAttribute("aria-pressed", "false");
             el.addEventListener("click", function () { show(s, el); });
           }
@@ -146,7 +141,6 @@
         S.slice().sort(function (a, b) { return a[0].localeCompare(b[0]); }).forEach(function (s) {
           var li = document.createElement("li");
           if (s[4] === "done") { var d = DONE[s[0]]; li.innerHTML = '<a class="link" href="' + d.href + '">' + s[0] + '</a><span>Audited \u00b7 ' + d.fig + '</span>'; }
-          else if (s[4] === "next") { li.innerHTML = "<b></b><span>Up next \u00b7 in progress</span>"; li.firstChild.textContent = s[0]; li.firstChild.style.fontWeight = "inherit"; }
           else { li.innerHTML = "<b></b><span>Not yet audited</span>"; li.firstChild.textContent = s[0]; li.firstChild.style.fontWeight = "inherit"; }
           li.dataset.name = s[0].toLowerCase();
           list.appendChild(li); items.push(li);
