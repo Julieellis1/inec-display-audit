@@ -58,58 +58,9 @@
     });
   }
   function autoNav() {
-    var sections = [].slice.call(doc.querySelectorAll("section[data-nav]"));
-    var header = doc.querySelector("header.nav[data-auto]");
-    if (header) {
-      /* Site menu (customisation for the INEC Display Audit site): a brand
-         link home, then this page's sections, then cross-page links to
-         States and Method, added only when the page has no section with
-         that id, so no label appears twice. data-root is "" at the site
-         root and "../" one level down. */
-      var root = header.getAttribute("data-root") || "";
-      var ids = sections.map(function (s) { return s.id; });
-      var extra = "";
-      if (ids.indexOf("states") === -1) extra += '<a href="' + root + 'index.html#states">States</a>';
-      if (ids.indexOf("method") === -1) extra += '<a href="' + root + 'method.html">Method</a>';
-      header.innerHTML = '<nav class="seg" aria-label="Site menu">' +
-        '<a href="' + root + 'index.html" class="seg__brand">INEC Display Audit</a>' +
-        each(sections, function (s) { return '<a href="#' + esc(s.id) + '">' + esc(s.getAttribute("data-nav")) + "</a>"; }) + extra + "</nav>" +
-        '<button class="theme-btn" id="theme-btn" type="button" aria-label="Switch to dark theme"></button>';
-    }
-    [].slice.call(doc.querySelectorAll(".foot nav[data-auto]")).forEach(function (n) {
-      n.innerHTML = '<a href="#top">Top</a>' + each(sections, function (s) { return '<a href="#' + esc(s.id) + '">' + esc(s.getAttribute("data-nav")) + "</a>"; });
-    });
+    /* The site header and footer are static HTML now (a standard header with
+       page links), so there is no pill menu to build here. */
     drawCharts();
-    window.addEventListener("resize", function () { clearTimeout(drawCharts.t); drawCharts.t = setTimeout(drawCharts, 150); }, { passive: true });
-    [].slice.call(doc.querySelectorAll(".table-wrap table")).forEach(function (t) {
-      var names = [].map.call(t.querySelectorAll("thead th"), function (th) { return th.textContent.trim(); });
-      [].slice.call(t.querySelectorAll("tbody tr")).forEach(function (tr) {
-        [].slice.call(tr.children).forEach(function (c, i) {
-          if (c.tagName !== "TD") return;
-          if (!c.textContent.trim() && !c.querySelector("img, svg")) c.classList.add("is-empty");
-          else if (names[i] && !c.hasAttribute("data-label")) c.setAttribute("data-label", names[i]);
-        });
-      });
-    });
-    [].slice.call(doc.querySelectorAll(".compare table")).forEach(function (t) {
-      t.parentNode.style.setProperty("--compare-cols", t.querySelectorAll("thead th").length);
-      [].slice.call(t.querySelectorAll(".compare__media .chip")).forEach(function (chip) {
-        chip.closest("th").appendChild(chip);
-      });
-      [].slice.call(t.querySelectorAll("tbody tr")).forEach(function (tr) {
-        var head = tr.querySelector("th"), label = head ? head.textContent.trim() : "";
-        [].slice.call(tr.querySelectorAll("td")).forEach(function (td) {
-          if (label && !td.hasAttribute("data-label")) td.setAttribute("data-label", label);
-        });
-      });
-    });
-    [].slice.call(doc.querySelectorAll(".step__figure img, .band img")).forEach(function (im) {
-      var mark = function () { if (im.naturalHeight > im.naturalWidth) im.parentNode.classList.add("is-portrait"); };
-      if (im.complete) mark(); else im.addEventListener("load", mark);
-    });
-    [].slice.call(doc.querySelectorAll(".hark-mark:empty")).forEach(function (m) { m.innerHTML = LOGO.replace(/SIZE/g, m.getAttribute("data-size") || "20"); });
-  }
-
   // Gives each day of plans a toggle and opens the first day. hark-trip.css shows the toggle, and
   // closes the other days, only on a phone.
   function dayToggles() {

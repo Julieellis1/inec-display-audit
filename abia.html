@@ -14,8 +14,15 @@
 <script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="site-brand" href="index.html">INEC Display Audit</a>
+    <nav class="site-nav" id="site-nav" aria-label="Site menu"><a href="index.html">Home</a><a href="findings.html">Findings</a><a href="states.html">States</a><a href="method.html">Method</a><a href="data.html">Data</a></nav>
+    <button class="theme-btn" id="theme-btn" type="button" aria-label="Switch to dark theme"></button>
+    <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu">&#9776;</button>
+  </div>
+</header>
 <div class="page" id="top">
-<header class="nav glass" data-auto data-root=""></header>
 <main class="main">
 
 <section class="section" id="overview" data-nav="Overview">
@@ -30,12 +37,16 @@
     <div class="stat"><span class="stat__fig">0</span><span class="stat__label">Change in any LGA or ward</span></div>
     <div class="stat"><span class="stat__fig">17 &middot; 184</span><span class="stat__label">LGAs &middot; wards</span></div>
   </section>
-  <aside class="callout" aria-label="What the count means">
-    <p class="callout__head">Read this first</p>
-    <p class="callout__lead"><strong>A count result, not a clean bill of health.</strong> The totals match, but the names still carry real problems.</p>
-    <p class="fineprint">A shared name is a flag to put to INEC, not proof of duplication.</p>
-  </aside>
-  <p class="fineprint">Abia is the first state audited. We read every polling unit on INEC's display portal for Abia, all 17 local government areas and 184 wards, and compared the list with the June 2021 expansion list used for the 2023 election. The 2015 total for Abia was 2,675. Comparing with 2015 would mix the official 2021 expansion in with any later change, so the test that matters is display against 2021. See the <a class="link" href="method.html">method page</a>.</p>
+  <div class="duo">
+    <aside class="callout" aria-label="What the count means">
+      <p class="callout__head">Read this first</p>
+      <p class="callout__lead"><strong>A count result, not a clean bill of health.</strong> The totals match, but the names still carry real problems.</p>
+      <p class="fineprint">A shared name is a flag to put to INEC, not proof of duplication.</p>
+    </aside>
+    <div class="prose">
+      <p>Abia is the first state audited. We read every polling unit on INEC's display portal for Abia, all 17 local government areas and 184 wards, and compared the list with the June 2021 expansion list used for the 2023 election. The 2015 total for Abia was 2,675. Comparing with 2015 would mix the official 2021 expansion in with any later change, so the test that matters is display against 2021. See the <a class="link" href="method.html">method page</a>.</p>
+    </div>
+  </div>
 </section>
 
 <section class="section" id="findings" data-nav="Findings">
@@ -129,13 +140,15 @@
 </section>
 
 </main>
-<footer class="foot">
-<p>Structure only: polling unit codes and names as shown on the portals. No voter names, photos or register entries are published. Sources: <a class="link" href="https://display.inecnigeria.org" target="_blank" rel="noopener">display.inecnigeria.org</a> and <a class="link" href="https://cvr.inecnigeria.org/pu" target="_blank" rel="noopener">cvr.inecnigeria.org/pu</a>, read 6 November 2026. Independent citizen project, not affiliated with INEC.</p>
-<nav aria-label="Back to sections" data-auto></nav>
-<a class="badge" href="https://hark.com/" target="_blank" rel="noopener"><span class="hark-mark"></span><span>built by hark</span></a>
-</footer>
 </div>
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Structure only: polling unit codes and names as shown on the portals. No voter names, photos or register entries are published. Sources: <a class="link" href="https://display.inecnigeria.org" target="_blank" rel="noopener">display.inecnigeria.org</a> and <a class="link" href="https://cvr.inecnigeria.org/pu" target="_blank" rel="noopener">cvr.inecnigeria.org/pu</a>, read 6 November 2026. Independent citizen project, not affiliated with INEC.</p>
+    <nav aria-label="Site menu"><a href="index.html">Home</a><a href="findings.html">Findings</a><a href="states.html">States</a><a href="method.html">Method</a><a href="data.html">Data</a></nav>
+  </div>
+</footer>
 <script src="assets/hark.js"></script>
+<script src="assets/site.js" defer></script>
 <script src="assets/search.js" defer></script>
 </body>
 </html>

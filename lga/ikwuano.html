@@ -14,8 +14,15 @@
 <script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="site-brand" href="../index.html">INEC Display Audit</a>
+    <nav class="site-nav" id="site-nav" aria-label="Site menu"><a href="../index.html">Home</a><a href="../findings.html">Findings</a><a href="../states.html">States</a><a href="../method.html">Method</a><a href="../data.html">Data</a></nav>
+    <button class="theme-btn" id="theme-btn" type="button" aria-label="Switch to dark theme"></button>
+    <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu">&#9776;</button>
+  </div>
+</header>
 <div class="page" id="top">
-<header class="nav glass" data-auto data-root="../"></header>
 <main class="main">
 
 <section class="section" id="overview" data-nav="Overview">
@@ -38,6 +45,9 @@
     <p class="head__eyebrow">Check for errors</p>
     <h2>What to check in Ikwuano.</h2>
   </div>
+<div class="duo">
+  <div>
+
   <ul class="checklist">
     <li>
       <span class="checklist__item">Duplicate polling unit codes <small>Each code should appear once</small></span>
@@ -55,6 +65,8 @@
       <span class="checklist__note">Every ward is checked from 001 to its highest number.</span>
     </li>
   </ul>
+  </div>
+  <div>
 
   <div class="table-wrap">
     <table>
@@ -67,6 +79,8 @@
     </table>
   </div>
   <p class="fineprint">A shared name is a flag to put to INEC, not proof of duplication. The same school or hall can legitimately host several polling units.</p>
+  </div>
+</div>
 
   <div class="cards"><div>
     <h3>Spelling quirks</h3>
@@ -270,13 +284,15 @@
 </section>
 
 </main>
-<footer class="foot">
-<p>Structure only: polling unit codes and names as shown on the portals. No voter names, photos or register entries are published. Sources: <a class="link" href="https://display.inecnigeria.org" target="_blank" rel="noopener">display.inecnigeria.org</a> and <a class="link" href="https://cvr.inecnigeria.org/pu" target="_blank" rel="noopener">cvr.inecnigeria.org/pu</a>, read 6 November 2026. Independent citizen project, not affiliated with INEC.</p>
-<nav aria-label="Back to sections" data-auto></nav>
-<a class="badge" href="https://hark.com/" target="_blank" rel="noopener"><span class="hark-mark"></span><span>built by hark</span></a>
-</footer>
 </div>
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Structure only: polling unit codes and names as shown on the portals. No voter names, photos or register entries are published. Sources: <a class="link" href="https://display.inecnigeria.org" target="_blank" rel="noopener">display.inecnigeria.org</a> and <a class="link" href="https://cvr.inecnigeria.org/pu" target="_blank" rel="noopener">cvr.inecnigeria.org/pu</a>, read 6 November 2026. Independent citizen project, not affiliated with INEC.</p>
+    <nav aria-label="Site menu"><a href="../index.html">Home</a><a href="../findings.html">Findings</a><a href="../states.html">States</a><a href="../method.html">Method</a><a href="../data.html">Data</a></nav>
+  </div>
+</footer>
 <script src="../assets/hark.js"></script>
+<script src="../assets/site.js" defer></script>
 <script>
 document.getElementById("filter").addEventListener("input", function () {
   var q = this.value.trim().toLowerCase();
