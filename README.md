@@ -123,7 +123,7 @@ same way.
   (Cross-River-Display-Audit-2026-11-06-v36.xlsx).
 
 Headline result: Cross River, 6 November 2026: display 3,281 = June 2021
-3,281. Change 0 in every LGA and every ward. Exact name repeats in 10 of
+3,281. Change 0 in every LGA and every ward. Exact name repeats in 9 of
 18 LGAs; no missing numbers anywhere. All 18 LGAs match display names at
 every code. Five lists were corrected after live spot rechecks: the display
 lists for Abi (1 code), Akpabuyo (1 code) and Calabar Municipal (2 codes),
