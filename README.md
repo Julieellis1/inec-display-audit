@@ -74,6 +74,50 @@ locator returned different name lists on different visits there, and all
 versions are published in the workbook.
 In Etsako West the display matches neither 2021 version at most codes.
 
+## Anambra (added 6 November 2026)
+
+- `anambra.html`: Anambra state page (overview, findings, LGA table, search, data).
+- `lga/<slug>.html`: one page per Anambra LGA (21), with its full unit list,
+  error checks, 2021 comparison and CSV downloads. Slugs: aguata, ayamelum,
+  anambra-east, anambra-west, anaocha, awka-north, awka-south, dunukofia,
+  ekwusigo, idemili-north, idemili-south, ihiala, njikoka, nnewi-north,
+  nnewi-south, ogbaru, onitsha-north, onitsha-south, orumba-north,
+  orumba-south, oyi.
+- `assets/units-anambra.json` and `assets/search-anambra.js`: the Anambra
+  unit search on anambra.html (the Abia search still uses units.json and
+  search.js; Edo uses units-edo.json and search-edo.js).
+- `data/`: 21 display CSVs, 21 June 2021 CSVs, 22 variant and recollection
+  CSVs (first runs, ward recollections and full recollections for Aguata,
+  Ayamelum, Anambra East, Anambra West, Anaocha, Awka South, Dunukofia,
+  Idemili North, Onitsha South, Orumba North and Oyi), and the full
+  workbook (Anambra-Display-Audit-2026-11-06-v52.xlsx).
+
+Headline result: Anambra, 6 November 2026: display 5,720 = June 2021
+5,720. Change 0 in every LGA and every ward. Exact name repeats in 17 of
+21 LGAs; no missing numbers anywhere. Seventeen LGAs match display names
+at every code; Orumba North differs at 1 of 253 codes, a single-letter
+spelling (OPOSITE on the collected lists, OPPOSITE on the recollection).
+Three LGAs are settled with no single name verdict: Anambra West (three
+name versions), Idemili North (four) and Onitsha South (three), because
+the portals returned different name lists for the same codes on
+6 November 2026; all versions are published in the workbook. Five first
+2021 lists (Ayamelum, Awka South, Dunukofia, Orumba North, Oyi) and the
+Anambra East ward 12 list were withdrawn as collection errors after live
+spot rechecks and recollected; the Anaocha display list was corrected the
+same way.
+
+## Rebuild
+
+Run `python3 build_website_anambra.py` in
+~/workspace/your_files/inec-display-audit/. It rebuilds anambra.html,
+the 21 Anambra LGA pages, assets/units-anambra.json,
+assets/search-anambra.js and the Anambra data files. The hand pages
+(index.html, findings.html, states.html, data.html) are not touched;
+they are kept in step by rebuild_standard.py.
+NOTE: re-running build_website.py (Abia) rewrites this README without the
+Edo and Anambra sections, so re-run build_website_edo.py and
+build_website_anambra.py after it to restore this file.
+
 ## Rebuild
 
 Run `python3 build_website_edo.py` in
