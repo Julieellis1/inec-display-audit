@@ -20,9 +20,9 @@ compared unit by unit with the June 2021 list used for the 2023 election.
   checks, 2021 comparison and CSV downloads.
 - `method.html`: the method, principles, flag rules and sources.
 - `data/`: 17 display CSVs (recollected versions for Aba North, Aba South,
-  Umuahia North), 17 June 2021 CSVs, 4 ward-03 variant CSVs (Ohafia and
-  Osisioma Ngwa), and the full workbook
-  (Abia-Display-Audit-2026-11-06-v46.xlsx).
+  Umuahia North), 17 June 2021 CSVs, 9 variant CSVs (Ohafia 2, Osisioma
+  Ngwa 2, Umuahia North 1, Aba North 1, Aba South 3), and the full workbook
+  (Abia-Display-Audit-2026-11-06-v52.xlsx).
 - `assets/`: Hark design system (hark.css, hark-hero.css, hark.js) plus
   site.css (site styles and the standard header/footer) and search.js
   (Abia unit search).
@@ -42,11 +42,13 @@ Abia, 6 November 2026: display 4,062 = June 2021 4,062. Change 0 in every
 LGA and every ward. Exact name repeats in 10 of 17 LGAs; missing numbers
 only in Aba North (Ariaria Market 058, Eziama 057). Thirteen LGAs match
 display names at every code; Osisioma Ngwa differs at 62 of 301 codes
-(genuine: two 2021 readings agree against the display). The first 2021
-lists for Aba North, Aba South and Umuahia North were withdrawn after
-live spot checks proved them wrong. Ohafia and Osisioma Ngwa were
-recollected on 6 November 2026; their ward 03s each returned three
-locator versions in one day, all published.
+(genuine: two 2021 readings agree against the display). Three LGAs are
+settled with no single name verdict: Umuahia North (four name versions),
+Aba North (five) and Aba South (six), because the portals returned
+different name lists for the same codes on 6 November 2026; all versions
+are published in the workbook. Ohafia and Osisioma Ngwa were recollected
+on 6 November 2026; their ward 03s each returned three locator versions
+in one day, all published.
 
 ## Edo (added 6 November 2026)
 
