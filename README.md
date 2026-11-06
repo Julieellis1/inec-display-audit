@@ -19,7 +19,7 @@ compared unit by unit with the June 2021 list used for the 2023 election.
 - `method.html`: the method, principles, flag rules and sources.
 - `data/`: 17 display CSVs (recollected versions for Aba North, Aba South,
   Umuahia North), 17 June 2021 CSVs, and the full workbook
-  (Abia-Display-Audit-2026-11-06-v41.xlsx).
+  (Abia-Display-Audit-2026-11-06-v43.xlsx).
 - `assets/`: Hark design system (hark.css, hark-hero.css, hark.js) plus
   site.css (site styles and the standard header/footer) and search.js
   (Abia unit search).
@@ -37,9 +37,11 @@ badge.
 
 Abia, 6 November 2026: display 4,062 = June 2021 4,062. Change 0 in every
 LGA and every ward. Exact name repeats in 10 of 17 LGAs; missing numbers
-only in Aba North (Ariaria Market 058, Eziama 057). Three 2021 name lists
-are unreliable until recollected (Ohafia, Osisioma Ngwa, Umuahia South);
+only in Aba North (Ariaria Market 058, Eziama 057). Two 2021 name lists
+are unreliable until recollected (Osisioma Ngwa, Umuahia South);
 three differ sharply (Aba North, Aba South, Umuahia North).
+Ohafia was recollected on 6 November 2026 and matches the display at
+all 282 codes; its ward 03 returned three locator versions in one day.
 
 ## Edo (added 6 November 2026)
 
@@ -63,39 +65,6 @@ The 2021 locator was not reproducible in 6 LGAs (Akoko-Edo, Esan
 North-East, Esan South-East, Esan West, Etsako West, Ikpoba-Okha); those
 name verdicts are unreliable until the locator returns a stable list.
 In Etsako West the display matches neither 2021 version at most codes.
-
-## Edo (added 6 November 2026)
-
-- `edo.html`: Edo state page (overview, findings, LGA table, search, data).
-- `lga/<slug>.html`: one page per Edo LGA (18), with its full unit list,
-  error checks, 2021 comparison and CSV downloads. Slugs: akoko-edo, egor,
-  esan-central, esan-north-east, esan-south-east, esan-west, etsako-central,
-  etsako-east, etsako-west, igueben, ikpoba-okha, oredo, orhionmwon,
-  ovia-north-east, ovia-south-west, owan-east, owan-west, uhunmwonde.
-- `assets/units-edo.json` and `assets/search-edo.js`: the Edo unit search
-  on edo.html (the Abia search still uses units.json and search.js).
-- `data/`: 18 display CSVs, 18 June 2021 CSVs, 5 variant CSVs (first-visit
-  2021 lists for Esan South-East, Esan West, Etsako West and Ikpoba-Okha,
-  plus the second-visit list for Etsako West), and the full workbook
-  (Edo-Display-Audit-2026-11-06-v37.xlsx).
-
-Headline result: Edo, 6 November 2026: display 4,519 = June 2021 4,519.
-Change 0 in every LGA and every ward. Exact name repeats in 8 of 18 LGAs;
-no missing numbers anywhere. Ten LGAs match display names at every code.
-The 2021 locator was not reproducible in 6 LGAs (Akoko-Edo, Esan
-North-East, Esan South-East, Esan West, Etsako West, Ikpoba-Okha); those
-name verdicts are unreliable until the locator returns a stable list.
-In Etsako West the display matches neither 2021 version at most codes.
-
-## Rebuild
-
-Run `python3 build_website_edo.py` in
-~/workspace/your_files/inec-display-audit/. It rebuilds edo.html, the 18
-Edo LGA pages, assets/units-edo.json, assets/search-edo.js and the Edo
-data files. The hand pages (index.html, findings.html, states.html,
-data.html) are not touched; they are kept in step by rebuild_standard.py.
-NOTE: re-running build_website.py (Abia) rewrites this README without the
-Edo section, so re-run build_website_edo.py after it to restore this file.
 
 ## Rebuild
 
