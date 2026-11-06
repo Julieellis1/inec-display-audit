@@ -261,8 +261,10 @@
 .page-head h1 { font-size: clamp(30px, 4.4vw, 48px); line-height: 1.1; letter-spacing: -0.02em; font-weight: var(--weight-medium); margin: 0; max-width: 22ch; text-wrap: balance; }
 .page-head p { margin: 14px 0 0; font: var(--type-lede); color: var(--text-secondary); max-width: 64ch; }
 
-/* Full-width hero: one column, text kept to a readable measure. */
-.x-hero__inner { grid-template-columns: minmax(0, 1fr); }
-.x-hero h1 { max-width: 22ch; }
+/* Full-width hero: two columns, headline and CTAs left, progress and countdown
+   right. The base two-column grid and the 860px collapse come from the moved
+   homepage styles; this file only widens the headline measure and gives the
+   progress block a visible panel so the right column is not bare. */
+.x-hero h1 { max-width: 26ch; }
 .x-hero .x-actions { margin-top: clamp(24px, 4vw, 40px); }
-.x-progress { max-width: 640px; }
+.x-hero .x-progress { background: rgba(255, 255, 255, .06); border: 1px solid rgba(255, 255, 255, .16); border-radius: 16px; padding: clamp(20px, 3vw, 28px); }

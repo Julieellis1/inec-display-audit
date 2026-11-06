@@ -54,6 +54,14 @@
           </div>
 <div class="x-mapwrap">
             <div class="x-tiles" id="tiles" role="group" aria-label="Nigeria's 36 states and the FCT, arranged by location"></div>
+            <div class="x-panel" id="state-panel" aria-live="polite">
+              <p class="x-num">Audited</p>
+              <h3>Abia</h3>
+              <p class="x-panel__fig">4,062 units, change 0</p>
+              <p>No extra polling units in any of its 17 LGAs or 184 wards.</p>
+              <a class="btn" href="abia.html">See the Abia results</a>
+            </div>
+          </div>
 <details class="x-details">
             <summary>List all 37 states</summary>
             <ul class="x-statelist" id="state-list"></ul>
@@ -92,15 +100,7 @@
           if (s[4] === "next") {
             panel.innerHTML = '<p class="x-num">Up next</p><h3></h3><p>Collection is under way. The AI-like photographs were first flagged in Edo, in Etsako West.</p><a class="btn" href="' + ABIA + '">See the first result: Abia</a>';
           } else {
-            if (s[4] === "next") {
-            panel.innerHTML = '<p class="x-num">Up next</p><h3></h3><p>Collection is under way. The AI-like photographs were first flagged in Edo, in Etsako West.</p><a class="btn" href="' + ABIA + '">See the first result: Abia</a>';
-          } else {
-            if (s[4] === "next") {
-            panel.innerHTML = '<p class="x-num">Up next</p><h3></h3><p>Collection is under way. The AI-like photographs were first flagged in Edo, in Etsako West.</p><a class="btn" href="' + ABIA + '">See the first result: Abia</a>';
-          } else {
             panel.innerHTML = '<p class="x-num">Not yet audited</p><h3></h3><p>Not yet audited. Each state is checked the same way, with the same tests.</p><a class="btn" href="' + ABIA + '">See the first result: Abia</a>';
-          }
-          }
           }
           panel.querySelector("h3").textContent = s[0];
         }
@@ -135,9 +135,7 @@
 
         S.slice().sort(function (a, b) { return a[0].localeCompare(b[0]); }).forEach(function (s) {
           var li = document.createElement("li");
-          if (s[4] === "done") li.innerHTML = '<a class="link" href="' + ABIA + '">Abia</a><span>Audited · 4,062 units, change 0</span>';
-          else if (s[4] === "next") { li.innerHTML = "<b></b><span>Up next \u00b7 in progress</span>"; li.firstChild.textContent = s[0]; li.firstChild.style.fontWeight = "inherit"; }
-          else if (s[4] === "next") { li.innerHTML = "<b></b><span>Up next \u00b7 in progress</span>"; li.firstChild.textContent = s[0]; li.firstChild.style.fontWeight = "inherit"; }
+          if (s[4] === "done") li.innerHTML = '<a class="link" href="' + ABIA + '">Abia</a><span>Audited \u00b7 4,062 units, change 0</span>';
           else if (s[4] === "next") { li.innerHTML = "<b></b><span>Up next \u00b7 in progress</span>"; li.firstChild.textContent = s[0]; li.firstChild.style.fontWeight = "inherit"; }
           else { li.innerHTML = "<b></b><span>Not yet audited</span>"; li.firstChild.textContent = s[0]; li.firstChild.style.fontWeight = "inherit"; }
           li.dataset.name = s[0].toLowerCase();
@@ -158,14 +156,12 @@
           }
         });
 // Subtle scroll reveal
-// Subtle scroll reveal
         var els = document.querySelectorAll(".x-reveal");
         if (!("IntersectionObserver" in window)) { els.forEach(function (e) { e.classList.add("is-in"); }); return; }
         var io = new IntersectionObserver(function (en) {
           en.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("is-in"); io.unobserve(e.target); } });
         }, { rootMargin: "0px 0px -8% 0px" });
         els.forEach(function (e) { io.observe(e); });
-      })();
       })();
     </script>
   </body>
