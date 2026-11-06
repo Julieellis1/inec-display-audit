@@ -106,6 +106,43 @@ Anambra East ward 12 list were withdrawn as collection errors after live
 spot rechecks and recollected; the Anaocha display list was corrected the
 same way.
 
+## Cross River (added 6 November 2026)
+
+- `cross-river.html`: Cross River state page (overview, findings, LGA table, search, data).
+- `lga/<slug>.html`: one page per Cross River LGA (18), with its full unit list,
+  error checks, 2021 comparison and CSV downloads. Slugs: abi, akamkpa,
+  akpabuyo, bakassi, bekwarra, biase, boki, calabar-municipal, calabar-south,
+  etung, ikom, obanliku, obubra, obudu, odukpani, ogoja, yakurr, yala.
+- `assets/units-cross-river.json` and `assets/search-cross-river.js`: the
+  Cross River unit search on cross-river.html (the Abia search still uses
+  units.json and search.js; Edo uses units-edo.json and search-edo.js;
+  Anambra uses units-anambra.json and search-anambra.js).
+- `data/`: 18 display CSVs, 18 June 2021 CSVs, 10 variant and recollection
+  CSVs (first runs and recollections for Abi, Akpabuyo, Calabar Municipal,
+  Calabar South and Obudu), and the full workbook
+  (Cross-River-Display-Audit-2026-11-06-v36.xlsx).
+
+Headline result: Cross River, 6 November 2026: display 3,281 = June 2021
+3,281. Change 0 in every LGA and every ward. Exact name repeats in 10 of
+18 LGAs; no missing numbers anywhere. All 18 LGAs match display names at
+every code. Five lists were corrected after live spot rechecks: the display
+lists for Abi (1 code), Akpabuyo (1 code) and Calabar Municipal (2 codes),
+and the 2021 lists for Calabar South and Obudu (whole-LGA recollections).
+No LGA is left with an unsettled name verdict.
+
+## Rebuild
+
+Run `python3 build_website_cross_river.py` in
+~/workspace/your_files/inec-display-audit/. It rebuilds cross-river.html,
+the 18 Cross River LGA pages, assets/units-cross-river.json,
+assets/search-cross-river.js and the Cross River data files. The hand pages
+(index.html, findings.html, states.html, data.html) are not touched;
+they are kept in step by rebuild_standard.py.
+NOTE: re-running build_website.py (Abia) rewrites this README without the
+Edo, Anambra and Cross River sections, so re-run build_website_edo.py,
+build_website_anambra.py and build_website_cross_river.py after it to
+restore this file.
+
 ## Rebuild
 
 Run `python3 build_website_anambra.py` in
@@ -115,8 +152,9 @@ assets/search-anambra.js and the Anambra data files. The hand pages
 (index.html, findings.html, states.html, data.html) are not touched;
 they are kept in step by rebuild_standard.py.
 NOTE: re-running build_website.py (Abia) rewrites this README without the
-Edo and Anambra sections, so re-run build_website_edo.py and
-build_website_anambra.py after it to restore this file.
+Edo, Anambra and Cross River sections, so re-run build_website_edo.py,
+build_website_anambra.py and build_website_cross_river.py after it to
+restore this file.
 
 ## Rebuild
 
