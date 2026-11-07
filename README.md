@@ -167,6 +167,46 @@ each), Warri South (corrected in 17 wards, three versions in wards 13,
 were withdrawn as collection errors after live spot rechecks or full
 recollections and now match at every code.
 
+## Ebonyi (added 7 November 2026)
+
+- `ebonyi.html`: Ebonyi state page (overview, findings, LGA table, search, data).
+- `lga/<slug>.html`: one page per Ebonyi LGA (13), with its full unit list,
+  error checks, 2021 comparison and CSV downloads. Slugs: abakaliki,
+  afikpo-north, afikpo-south, ebonyi, ezza-north, ezza-south, ikwo,
+  ishielu, ivo, izzi, ohaozara, ohaukwu, onicha.
+- `assets/units-ebonyi.json` and `assets/search-ebonyi.js`: the Ebonyi unit
+  search on ebonyi.html (the Abia search still uses units.json and
+  search.js; Edo uses units-edo.json and search-edo.js; Anambra uses
+  units-anambra.json and search-anambra.js; Cross River uses
+  units-cross-river.json and search-cross-river.js; Delta uses
+  units-delta.json and search-delta.js).
+- `data/`: 13 display CSVs, 13 June 2021 CSVs, 2 variant and recollection
+  CSVs (the withdrawn first 2021 list and the full display recollection
+  for Ishielu), and the full workbook
+  (Ebonyi-Display-Audit-2026-11-07-v26.xlsx). The June 2021 CSV for
+  Afikpo South is named for the locator label, Ebonyi-Edda-2021-...,
+  because the 2021 locator labels that LGA EDDA while the display portal
+  calls it AFIKPO SOUTH.
+
+Headline result: Ebonyi, 7 November 2026: display 2,946 = June 2021
+2,946. Change 0 in every LGA and every ward. Both lists sit 1 below the
+REC-announced 2,947; the difference is already on the locator side.
+Exact name repeats in 10 of 13 LGAs; no missing numbers
+anywhere. All 13 LGAs match display names at every code. Two lists were
+corrected after live rechecks: the display list for Ohaozara (1 code, a
+misread of UMUITUM as UMITUM) and the 2021 list for Ishielu (whole-LGA
+recollection after the first run matched at only 24 of 243 codes). No LGA
+is left with an unsettled name verdict.
+
+## Rebuild
+
+Run `python3 build_website_ebonyi.py` in
+~/workspace/your_files/inec-display-audit/. It rebuilds ebonyi.html,
+the 13 Ebonyi LGA pages, assets/units-ebonyi.json,
+assets/search-ebonyi.js, copies the Ebonyi data files, and adds this
+section to the README (idempotent: it skips the insert if the Ebonyi
+section is already present).
+
 ## Rebuild
 
 Run `python3 build_website_delta.py` in
@@ -185,9 +225,10 @@ assets/search-cross-river.js and the Cross River data files. The hand pages
 (index.html, findings.html, states.html, data.html) are not touched;
 they are kept in step by rebuild_standard.py.
 NOTE: re-running build_website.py (Abia) rewrites this README without the
-Edo, Anambra and Cross River sections, so re-run build_website_edo.py,
-build_website_anambra.py and build_website_cross_river.py after it to
-restore this file.
+Edo, Anambra, Cross River, Delta and Ebonyi sections, so re-run
+build_website_edo.py, build_website_anambra.py,
+build_website_cross_river.py, build_website_delta.py and
+build_website_ebonyi.py after it to restore this file.
 
 ## Rebuild
 
