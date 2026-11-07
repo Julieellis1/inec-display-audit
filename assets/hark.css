@@ -628,9 +628,11 @@ tr.is-highlight > :last-child { box-shadow: 12px 0 var(--fill-tertiary); }
 .checklist > li > .chip { grid-column: 2; justify-self: start; }
 .checklist:not(:has(.checklist__note)) > li > .chip { justify-self: end; }
 .checklist__item small { display: block; font-weight: var(--weight-regular); font-size: var(--size-caption); color: var(--text-secondary); margin-top: 2px; }
-.checklist__note { grid-column: 3; font-size: var(--size-small); color: var(--text-secondary); overflow-wrap: break-word; }
+.checklist__note { grid-column: 3; font-size: var(--size-small); color: var(--text-secondary); min-width: 0; overflow-wrap: break-word; overflow-wrap: anywhere; }
 /* Long unbroken ward names (slash-joined, no spaces) in a note must wrap
-   inside their column instead of overprinting the next column. */
+   inside their column instead of overprinting the next column. break-word
+   alone only changes line breaking; anywhere also lets the column shrink
+   below the token, which is what stops the overflow. */
 .checklist > li.is-done .checklist__item { text-decoration: line-through; text-decoration-color: var(--text-tertiary); }
 /* A row's own button sits in a last column, so each booking is pressed where it is listed. */
 .checklist:has(> li > .btn) { grid-template-columns: minmax(0, 1.4fr) auto minmax(0, 1fr) auto; }
