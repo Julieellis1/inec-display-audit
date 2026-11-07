@@ -18,7 +18,6 @@
   <div class="wrap">
     <a class="site-brand" href="index.html">INEC Display Audit</a>
     <nav class="site-nav" id="site-nav" aria-label="Site menu"><a href="index.html">Home</a><a href="findings.html">Findings</a><a href="states.html" aria-current="true">States</a><a href="method.html">Method</a><a href="data.html">Data</a></nav>
-    <button class="theme-btn" id="theme-btn" type="button" aria-label="Switch to dark theme"></button>
     <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu">&#9776;</button>
   </div>
 </header>
@@ -150,7 +149,63 @@
           list.appendChild(li); items.push(li);
         });
 
-        document.getElementById("state-search").addEventListener("input", function () {
+// State search: live suggestions under the box, as you type. The tiles
+// still dim and the list still filters; the dropdown is what you tap.
+        var searchBox = document.getElementById("state-search");
+        var suggest = document.createElement("div");
+        suggest.className = "x-suggest";
+        suggest.hidden = true;
+        searchBox.parentNode.appendChild(suggest);
+        var suggestIdx = -1;
+
+        function statusText(name) {
+          var d = DONE[name];
+          return d ? "Audited \u00b7 " + d.fig : "Not yet audited";
+        }
+        function pickState(s) {
+          searchBox.value = s[0];
+          suggest.hidden = true;
+          searchBox.blur();
+          var tile = tiles.filter(function (t) { return t.dataset.name === s[0].toLowerCase(); })[0];
+          if (s[4] === "done") {
+            tiles.forEach(function (t) { if (t.tagName === "BUTTON") t.setAttribute("aria-pressed", "false"); });
+            panel.innerHTML = donePanel(s[0]);
+          } else {
+            show(s, tile);
+          }
+          panel.scrollIntoView({ behavior: "smooth", block: "nearest" });
+        }
+        function renderSuggest(raw) {
+          var q = raw.trim().toLowerCase();
+          suggestIdx = -1;
+          if (!q) { suggest.innerHTML = ""; suggest.hidden = true; return; }
+          var matches = S.filter(function (s) { return s[0].toLowerCase().indexOf(q) !== -1; });
+          if (!matches.length) {
+            suggest.innerHTML = "";
+            var none = document.createElement("p");
+            none.className = "x-suggest__none";
+            none.textContent = "No state matches \"" + raw.trim() + "\".";
+            suggest.appendChild(none);
+            suggest.hidden = false;
+            return;
+          }
+          suggest.innerHTML = "";
+          matches.slice(0, 8).forEach(function (s) {
+            var b = document.createElement("button");
+            b.type = "button";
+            var nm = document.createElement("b");
+            nm.textContent = s[0];
+            var st = document.createElement("span");
+            st.textContent = statusText(s[0]);
+            b.appendChild(nm);
+            b.appendChild(st);
+            b.addEventListener("click", function () { pickState(s); });
+            suggest.appendChild(b);
+          });
+          suggest.hidden = false;
+        }
+
+        searchBox.addEventListener("input", function () {
           var q = this.value.trim().toLowerCase(), match = null, n = 0;
           tiles.forEach(function (t) {
             var hit = !q || t.dataset.name.indexOf(q) !== -1;
@@ -158,10 +213,33 @@
             if (hit && q) { n++; match = t; }
           });
           items.forEach(function (li) { li.classList.toggle("is-hidden", !!q && li.dataset.name.indexOf(q) === -1); });
+          renderSuggest(this.value);
           if (n === 1) {
-            if (match.tagName === "BUTTON") show(S.filter(function (s) { return s[0].toLowerCase() === match.dataset.name; })[0], match);
-            else { var nm = match.dataset.name; panel.innerHTML = donePanel(nm.charAt(0).toUpperCase() + nm.slice(1)); }
+            var found = S.filter(function (s) { return s[0].toLowerCase() === match.dataset.name; })[0];
+            if (!found) return;
+            if (match.tagName === "BUTTON") show(found, match);
+            else panel.innerHTML = donePanel(found[0]);
           }
+        });
+        searchBox.addEventListener("keydown", function (e) {
+          if (e.key === "Escape") { suggest.hidden = true; searchBox.blur(); return; }
+          var btns = suggest.querySelectorAll("button");
+          if (e.key === "ArrowDown" || e.key === "ArrowUp") {
+            if (!btns.length) return;
+            e.preventDefault();
+            suggestIdx = e.key === "ArrowDown"
+              ? (suggestIdx + 1) % btns.length
+              : (suggestIdx - 1 + btns.length) % btns.length;
+            btns.forEach(function (b, i) { b.classList.toggle("is-active", i === suggestIdx); });
+          } else if (e.key === "Enter") {
+            if (suggest.hidden) return;
+            e.preventDefault();
+            if (suggestIdx >= 0 && btns[suggestIdx]) btns[suggestIdx].click();
+            else if (btns[0]) btns[0].click();
+          }
+        });
+        document.addEventListener("click", function (e) {
+          if (!suggest.hidden && !searchBox.parentNode.contains(e.target)) suggest.hidden = true;
         });
 // Subtle scroll reveal
         var els = document.querySelectorAll(".x-reveal");

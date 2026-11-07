@@ -168,22 +168,8 @@ small { font-size: max(var(--size-caption), 0.85em); }
 .seg a:hover { color: var(--text-primary-on); }
 /* The active tab carries its own fill so its text is measured against it. */
 .seg a[aria-current="true"] { background: var(--fill-primary-on); color: var(--text-primary); }
-.theme-btn {
-  flex: none;
-  width: 36px; height: 36px;
-  display: grid;
-  place-items: center;
-  border: 0;
-  border-radius: 50%;
-  background: var(--hover-wash-primary-on);
-  color: var(--text-primary-on);
-  cursor: pointer;
-}
-.theme-btn:hover { box-shadow: inset 0 0 0 100px var(--hover-wash-primary-on); }
-.theme-btn::before { content: ""; width: 14px; height: 14px; border-radius: 50%; box-shadow: inset 0 0 0 1.5px currentColor; background: linear-gradient(to right, light-dark(currentColor, transparent) 50%, light-dark(transparent, currentColor) 50%); }
 @media (max-width: 599px) {
   .seg a { display: flex; align-items: center; min-height: var(--tap); }
-  .theme-btn { width: var(--tap); height: var(--tap); }
 }
 
 /* @component footer */
