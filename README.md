@@ -199,6 +199,90 @@ misread of UMUITUM as UMITUM) and the 2021 list for Ishielu (whole-LGA
 recollection after the first run matched at only 24 of 243 codes). No LGA
 is left with an unsettled name verdict.
 
+## Enugu (added 7 November 2026)
+
+- `enugu.html`: Enugu state page (overview, findings, LGA table, search, data).
+- `lga/<slug>.html`: one page per Enugu LGA (17), with its full unit list,
+  error checks, 2021 comparison and CSV downloads. Slugs: aninri, awgu,
+  enugu-east, enugu-north, enugu-south, ezeagu, igbo-etiti, igbo-eze-north,
+  igbo-eze-south, isi-uzo, nkanu-east, nkanu-west, nsukka, oji-river,
+  udenu, udi, uzo-uwani.
+- `assets/units-enugu.json` and `assets/search-enugu.js`: the Enugu unit
+  search on enugu.html (the Abia search still uses units.json and
+  search.js; Edo uses units-edo.json and search-edo.js; Anambra uses
+  units-anambra.json and search-anambra.js; Cross River uses
+  units-cross-river.json and search-cross-river.js; Delta uses
+  units-delta.json and search-delta.js).
+- `data/`: 17 display CSVs, 17 June 2021 CSVs, 16 variant and recollection
+  CSVs (withdrawn first 2021 lists and full recollections for Enugu East,
+  Enugu North, Enugu South, Nkanu East, Nkanu West, Nsukka, Oji-River,
+  Udenu and Uzo-Uwani, and the 12:27 display version for Isi Uzo), and
+  the full workbook (Enugu-Display-Audit-2026-11-07-v35.xlsx).
+
+Headline result: Enugu, 7 November 2026: display 4,145 = June 2021
+4,145. Change 0 in every LGA and every ward. Both lists equal the
+announced June 2021 total of 4,145. Settled names match at 3,654 of
+4,145 codes. Exact name repeats in 13 of 17 LGAs; one
+unit number is absent on both lists (Udenu ward 02 unit 010). Fifteen of
+17 LGAs match at every code. Six lists were corrected after live
+rechecks: the 2021 lists for Nkanu East, Nkanu West, Nsukka, Oji-River,
+Udenu and Uzo-Uwani, and the display list for Isi Uzo ward 08. Two LGAs
+are left UNRELIABLE on names: Enugu East (settled lists agree at 193 of
+386 codes) and Enugu North (95 of 393).
+
+## Imo (added 7 November 2026)
+
+- `imo.html`: Imo state page (overview, findings, LGA table, search, data).
+- `lga/<slug>.html`: one page per Imo LGA (27), with its full unit list,
+  error checks, 2021 comparison and CSV downloads. Slugs: aboh-mbaise,
+  ahiazu-mbaise, ehime-mbano, ezinihitte-mbaise, ideato-north,
+  ideato-south, ihitte-uboma, ikeduru, isiala-mbano, isu, mbaitoli,
+  ngor-okpala, njaba, nkwere, nwangele, obowo, oguta, ohaji-egbema,
+  okigwe, onuimo, orlu, orsu, oru-east, oru-west, owerri-municipal,
+  owerri-north, owerri-west.
+- `assets/units-imo.json` and `assets/search-imo.js`: the Imo unit
+  search on imo.html (the Abia search still uses units.json and
+  search.js; Edo uses units-edo.json and search-edo.js; Anambra uses
+  units-anambra.json and search-anambra.js; Cross River uses
+  units-cross-river.json and search-cross-river.js; Delta uses
+  units-delta.json and search-delta.js).
+- `data/`: 27 display CSVs, 27 June 2021 CSVs, 4 variant CSVs (the
+  Version A lists for Oguta and Owerri Municipal, and the combined
+  variant lists for both), and the full workbook
+  (Imo-Display-Audit-2026-11-07-v54.xlsx). Ikeduru's original 2021 entry
+  is preserved in the workbook only (2021_VARIANTS_IKEDURU).
+
+Headline result: Imo, 7 November 2026: display 4,758 = June 2021
+4,758. Change 0 in every LGA and every ward. Both lists equal the
+announced June 2021 total of 4,758. Settled names match at 4,758 of
+4,758 codes. Exact name repeats in 22 of 27 LGAs; no
+missing numbers anywhere. Twenty-three of 27 LGAs needed no correction.
+Four lists were corrected after live rechecks: the 2021 lists for
+Ikeduru (1 code), Oguta (18 codes) and Owerri Municipal (whole LGA), and
+the display list for Isiala Mbano (1 code). Against the 2021 lists as
+first collected, 4,700 of 4,758 names matched. The 2021 side stays
+unreliable on names as a historical matter for Oguta and Owerri
+Municipal: the locator served three different lists for each in a single
+day.
+
+## Rebuild
+
+Run `python3 build_website_imo.py` in
+~/workspace/your_files/inec-display-audit/. It rebuilds imo.html,
+the 27 Imo LGA pages, assets/units-imo.json,
+assets/search-imo.js, copies the Imo data files, and adds this
+section to the README (idempotent: it skips the insert if the Imo
+section is already present).
+
+## Rebuild
+
+Run `python3 build_website_enugu.py` in
+~/workspace/your_files/inec-display-audit/. It rebuilds enugu.html,
+the 17 Enugu LGA pages, assets/units-enugu.json,
+assets/search-enugu.js, copies the Enugu data files, and adds this
+section to the README (idempotent: it skips the insert if the Enugu
+section is already present).
+
 ## Rebuild
 
 Run `python3 build_website_ebonyi.py` in
@@ -240,9 +324,10 @@ assets/search-anambra.js and the Anambra data files. The hand pages
 (index.html, findings.html, states.html, data.html) are not touched;
 they are kept in step by rebuild_standard.py.
 NOTE: re-running build_website.py (Abia) rewrites this README without the
-Edo, Anambra and Cross River sections, so re-run build_website_edo.py,
-build_website_anambra.py and build_website_cross_river.py after it to
-restore this file.
+Edo, Anambra, Cross River, Delta, Ebonyi and Enugu sections, so re-run
+build_website_edo.py, build_website_anambra.py,
+build_website_cross_river.py, build_website_delta.py,
+build_website_ebonyi.py and build_website_enugu.py after it to restore this file.
 
 ## Rebuild
 
