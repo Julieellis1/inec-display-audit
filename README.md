@@ -130,6 +130,52 @@ lists for Abi (1 code), Akpabuyo (1 code) and Calabar Municipal (2 codes),
 and the 2021 lists for Calabar South and Obudu (whole-LGA recollections).
 No LGA is left with an unsettled name verdict.
 
+## Delta (added 7 November 2026)
+
+- `delta.html`: Delta state page (overview, findings, LGA table, search, data).
+- `lga/<slug>.html`: one page per Delta LGA (25), with its full unit list,
+  error checks, 2021 comparison and CSV downloads. Slugs: aniocha-north,
+  aniocha-south, bomadi, burutu, ethiope-east, ethiope-west, ika-north-east,
+  ika-south, isoko-north, isoko-south, ndokwa-east, ndokwa-west, okpe,
+  oshimili-north, oshimili-south, patani, sapele, udu, ughelli-north,
+  ughelli-south, ukwuani, uvwie, warri-north, warri-south, warri-south-west.
+- `assets/units-delta.json` and `assets/search-delta.js`: the Delta unit
+  search on delta.html (the Abia search still uses units.json and
+  search.js; Edo uses units-edo.json and search-edo.js; Anambra uses
+  units-anambra.json and search-anambra.js; Cross River uses
+  units-cross-river.json and search-cross-river.js).
+- `data/`: 25 display CSVs, 25 June 2021 CSVs, 26 variant and recollection
+  CSVs (first runs, ward recollections and full recollections for Ethiope
+  West, Isoko North, Isoko South, Ndokwa West, Okpe, Oshimili North,
+  Oshimili South, Patani, Udu, Ughelli North, Ughelli South, Uvwie, Warri
+  North, Warri South and Warri South West), and the full workbook
+  (Delta-Display-Audit-2026-11-06-v50.xlsx).
+
+Headline result: Delta, 7 November 2026: the June 2021 locator list
+totals 6,316 units against the announced June 2021 total of 5,863, a
+difference of +453. The display total cannot be established: Warri South
+West returned 451, then 528, then 513 units across readings within 14
+minutes, with ward codes changing between readings. The 24 settled LGAs
+total 5,803 units in 279 wards, and display and June 2021 agree on every
+code count in all 24. Exact name repeats in 14 of 25 LGAs;
+missing numbers in 4 LGAs
+(Ndokwa West, Warri North, Warri South, Warri South West).
+Twenty LGAs match display names at every code. Five LGAs have no single
+name verdict: Isoko South, Okpe and Warri North (three name versions
+each), Warri South (corrected in 17 wards, three versions in wards 13,
+19 and 20) and Warri South West (three display readings). Ten first lists
+were withdrawn as collection errors after live spot rechecks or full
+recollections and now match at every code.
+
+## Rebuild
+
+Run `python3 build_website_delta.py` in
+~/workspace/your_files/inec-display-audit/. It rebuilds delta.html,
+the 25 Delta LGA pages, assets/units-delta.json,
+assets/search-delta.js, copies the Delta data files, and adds this
+section to the README (idempotent: it skips the insert if the Delta
+section is already present).
+
 ## Rebuild
 
 Run `python3 build_website_cross_river.py` in
