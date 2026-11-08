@@ -265,6 +265,53 @@ unreliable on names as a historical matter for Oguta and Owerri
 Municipal: the locator served three different lists for each in a single
 day.
 
+## Lagos (added 8 November 2026)
+
+- `lagos.html`: Lagos state page (overview, findings, LGA table, search, data).
+- `lga/<slug>.html`: one page per Lagos LGA (20), with its full unit list,
+  error checks, 2021 comparison and CSV downloads. Slugs: agege,
+  ajeromi-ifelodun, alimosho, amuwo-odofin, apapa, badagry, epe, eti-osa,
+  ibeju-lekki, ifako-ijaiye, ikeja, ikorodu, kosofe, lagos-island,
+  lagos-mainland, mushin, ojo, oshodi-isolo, somolu, surulere.
+- `assets/units-lagos.json` and `assets/search-lagos.js`: the Lagos unit
+  search on lagos.html (the Abia search still uses units.json and
+  search.js; Edo uses units-edo.json and search-edo.js; Anambra uses
+  units-anambra.json and search-anambra.js; Cross River uses
+  units-cross-river.json and search-cross-river.js; Delta uses
+  units-delta.json and search-delta.js; Ebonyi uses units-ebonyi.json and
+  search-ebonyi.js; Enugu uses units-enugu.json and search-enugu.js; Imo
+  uses units-imo.json and search-imo.js).
+- `data/`: 20 display CSVs, 20 June 2021 CSVs, 9 variant CSVs (original
+  and earlier 2021 lists for Ajeromi-Ifelodun, Alimosho, Amuwo-Odofin,
+  Ifako-Ijaiye, Ikeja, Ikorodu, Ojo, Oshodi-Isolo and Somolu), 3 original
+  7 November 2021 CSVs for Ikeja, Ikorodu and Oshodi-Isolo, 4 report text
+  files (the Somolu and Surulere display reports, the superseded Mushin
+  ward 13 display read, and the Ojo 2021 recollection report), and the
+  full workbook (Lagos-Display-Audit-2026-11-08-v40.xlsx).
+
+Headline result: Lagos, 8 November 2026: display 13,325 = June 2021
+13,325. Change 0 in every LGA and every ward. Both lists equal the
+announced June 2021 total of 13,325. Settled names match at 10,689 of
+13,325 codes. Exact name repeats in 16 of 20 LGAs; no
+missing numbers anywhere. Thirteen of 20 LGAs match at every code. Six
+lists were corrected after live rechecks: the 2021 lists for
+Ajeromi-Ifelodun (1 code), Alimosho (1 code), Amuwo-Odofin (7 codes),
+Ifako-Ijaiye (1 code) and Oshodi-Isolo (whole LGA), and the display list
+for Mushin ward 13. Two genuine name differences remain: Alimosho
+24-03-06-091 and Ifako-Ijaiye 24-10-06-056. Five LGAs are left
+UNRELIABLE on names: Ikeja (settled lists agree at 75 of 667 codes),
+Ikorodu (76 of 682), Ojo (131 of 582), Somolu (353 of 616) and Surulere
+(35 of 757).
+
+## Rebuild
+
+Run `python3 build_website_lagos.py` in
+~/workspace/your_files/inec-display-audit/. It rebuilds lagos.html,
+the 20 Lagos LGA pages, assets/units-lagos.json,
+assets/search-lagos.js, copies the Lagos data files, and adds this
+section to the README (idempotent: it skips the insert if the Lagos
+section is already present).
+
 ## Rebuild
 
 Run `python3 build_website_imo.py` in
@@ -324,10 +371,11 @@ assets/search-anambra.js and the Anambra data files. The hand pages
 (index.html, findings.html, states.html, data.html) are not touched;
 they are kept in step by rebuild_standard.py.
 NOTE: re-running build_website.py (Abia) rewrites this README without the
-Edo, Anambra, Cross River, Delta, Ebonyi and Enugu sections, so re-run
-build_website_edo.py, build_website_anambra.py,
+Edo, Anambra, Cross River, Delta, Ebonyi, Enugu, Imo and Lagos sections, so
+re-run build_website_edo.py, build_website_anambra.py,
 build_website_cross_river.py, build_website_delta.py,
-build_website_ebonyi.py and build_website_enugu.py after it to restore this file.
+build_website_ebonyi.py, build_website_enugu.py, build_website_imo.py and
+build_website_lagos.py after it to restore this file.
 
 ## Rebuild
 
