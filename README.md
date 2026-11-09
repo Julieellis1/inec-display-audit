@@ -303,6 +303,46 @@ UNRELIABLE on names: Ikeja (settled lists agree at 75 of 667 codes),
 Ikorodu (76 of 682), Ojo (131 of 582), Somolu (353 of 616) and Surulere
 (35 of 757).
 
+## Nasarawa (added 9 November 2026)
+
+- `nasarawa.html`: Nasarawa state page (overview, findings, LGA table, search, data).
+- `lga/<slug>.html`: one page per Nasarawa LGA (13), with its full unit list,
+  error checks, 2021 comparison and CSV downloads. Slugs: akwanga, awe,
+  doma, karu, keana, keffi, kokona, lafia, nasarawa, nasarawa-eggon, obi,
+  toto, wamba.
+- `assets/units-nasarawa.json` and `assets/search-nasarawa.js`: the Nasarawa
+  unit search on nasarawa.html (the Abia search still uses units.json and
+  search.js; Edo uses units-edo.json and search-edo.js; Anambra uses
+  units-anambra.json and search-anambra.js; Cross River uses
+  units-cross-river.json and search-cross-river.js; Delta uses
+  units-delta.json and search-delta.js; Ebonyi uses units-ebonyi.json and
+  search-ebonyi.js; Enugu uses units-enugu.json and search-enugu.js; Imo
+  uses units-imo.json and search-imo.js; Lagos uses units-lagos.json and
+  search-lagos.js).
+- `data/`: 13 display CSVs, 13 June 2021 CSVs, the original 2021 CSV for
+  Karu, 2 original report text files (the Akwanga display report and the
+  Karu 2021 report, both before their one-code corrections), and the full
+  workbook (Nasarawa-Display-Audit-2026-11-09-v14.xlsx).
+
+Headline result: Nasarawa, 9 November 2026: display 3,256 = June 2021
+3,256. Change 0 in every LGA and every ward. The collected locator total
+matches the 2027 election monitor figure of 3,256; the Nasarawa REC
+figure 3,245 (February 2023) is 11 short. Settled names match at 3,256 of
+3,256 codes. Exact name repeats in 12 of 13 LGAs (44 distinct names
+covering 95 codes across the state); no missing numbers anywhere. All 13
+LGAs match at every code. Two lists were corrected after live rechecks:
+the display list for Akwanga (1 code) and the 2021 list for Karu (1 code).
+No LGA is left unreliable on names.
+
+## Rebuild
+
+Run `python3 build_website_nasarawa.py` in
+~/workspace/your_files/inec-display-audit/. It rebuilds nasarawa.html,
+the 13 Nasarawa LGA pages, assets/units-nasarawa.json,
+assets/search-nasarawa.js, copies the Nasarawa data files, and adds this
+section to the README (idempotent: it skips the insert if the Nasarawa
+section is already present).
+
 ## Rebuild
 
 Run `python3 build_website_lagos.py` in
@@ -371,11 +411,12 @@ assets/search-anambra.js and the Anambra data files. The hand pages
 (index.html, findings.html, states.html, data.html) are not touched;
 they are kept in step by rebuild_standard.py.
 NOTE: re-running build_website.py (Abia) rewrites this README without the
-Edo, Anambra, Cross River, Delta, Ebonyi, Enugu, Imo and Lagos sections, so
-re-run build_website_edo.py, build_website_anambra.py,
+Edo, Anambra, Cross River, Delta, Ebonyi, Enugu, Imo, Lagos and Nasarawa
+sections, so re-run build_website_edo.py, build_website_anambra.py,
 build_website_cross_river.py, build_website_delta.py,
-build_website_ebonyi.py, build_website_enugu.py, build_website_imo.py and
-build_website_lagos.py after it to restore this file.
+build_website_ebonyi.py, build_website_enugu.py, build_website_imo.py,
+build_website_lagos.py and build_website_nasarawa.py after it to restore
+this file.
 
 ## Rebuild
 
