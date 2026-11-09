@@ -334,6 +334,50 @@ LGAs match at every code. Two lists were corrected after live rechecks:
 the display list for Akwanga (1 code) and the 2021 list for Karu (1 code).
 No LGA is left unreliable on names.
 
+## Ekiti (added 9 November 2026)
+
+- `ekiti.html`: Ekiti state page (overview, findings, LGA table, search, data).
+- `lga/<slug>.html`: one page per Ekiti LGA (16), with its full unit list,
+  error checks, 2021 comparison and CSV downloads. Slugs: ado-ekiti, efon,
+  ekiti-east, ekiti-west, ekiti-south-west, emure, aiyekire, ido-osi, ijero,
+  ikere, ikole, ilejemeje, irepodun-ifelodun, ise-orun, moba, oye.
+- `assets/units-ekiti.json` and `assets/search-ekiti.js`: the Ekiti
+  unit search on ekiti.html (the Abia search still uses units.json and
+  search.js; Edo uses units-edo.json and search-edo.js; Anambra uses
+  units-anambra.json and search-anambra.js; Cross River uses
+  units-cross-river.json and search-cross-river.js; Delta uses
+  units-delta.json and search-delta.js; Ebonyi uses units-ebonyi.json and
+  search-ebonyi.js; Enugu uses units-enugu.json and search-enugu.js; Imo
+  uses units-imo.json and search-imo.js; Lagos uses units-lagos.json and
+  search-lagos.js; Nasarawa uses units-nasarawa.json and
+  search-nasarawa.js).
+- `data/`: 16 display CSVs, 16 June 2021 CSVs, the original 2021 CSV for
+  Ado Ekiti, the original display CSVs for Ekiti East, Ekiti West and
+  Ikole, 5 variant CSVs (first collections for Ekiti West and Ikole, blind
+  rechecks for Ekiti West, Ikole and Ilejemeje), 7 original report text
+  files, and the full workbook (Ekiti-Display-Audit-2026-11-09-v32.xlsx).
+
+Headline result: Ekiti, 9 November 2026: display 2,445 = June 2021
+2,445. Change 0 in every LGA and every ward. The collected locator total
+matches the published June 2021 total of 2,445 (2,195 plus 250 new).
+Settled names match at 2,133 of 2,445 codes. Exact name repeats
+in 5 of 16 LGAs (8 distinct names covering 16 codes); no missing numbers
+anywhere. Fourteen LGAs match at every code. Two LGAs are left UNRELIABLE
+on names: Ekiti West (35 of 184) and Ikole (26 of 189). Five lists were
+corrected after live rechecks: the 2021 list for Ado Ekiti (9 wards) and
+the display lists for Ekiti East (5 codes), Ekiti South-West (30 codes),
+Emure (11 codes) and Ilejemeje (68 codes). No genuine single-name
+difference anywhere.
+
+## Rebuild
+
+Run `python3 build_website_ekiti.py` in
+~/workspace/your_files/inec-display-audit/. It rebuilds ekiti.html,
+the 16 Ekiti LGA pages, assets/units-ekiti.json,
+assets/search-ekiti.js, copies the Ekiti data files, and adds this
+section to the README (idempotent: it skips the insert if the Ekiti
+section is already present).
+
 ## Rebuild
 
 Run `python3 build_website_nasarawa.py` in
@@ -411,12 +455,12 @@ assets/search-anambra.js and the Anambra data files. The hand pages
 (index.html, findings.html, states.html, data.html) are not touched;
 they are kept in step by rebuild_standard.py.
 NOTE: re-running build_website.py (Abia) rewrites this README without the
-Edo, Anambra, Cross River, Delta, Ebonyi, Enugu, Imo, Lagos and Nasarawa
-sections, so re-run build_website_edo.py, build_website_anambra.py,
+Edo, Anambra, Cross River, Delta, Ebonyi, Enugu, Imo, Lagos, Nasarawa and
+Ekiti sections, so re-run build_website_edo.py, build_website_anambra.py,
 build_website_cross_river.py, build_website_delta.py,
 build_website_ebonyi.py, build_website_enugu.py, build_website_imo.py,
-build_website_lagos.py and build_website_nasarawa.py after it to restore
-this file.
+build_website_lagos.py, build_website_nasarawa.py and build_website_ekiti.py
+after it to restore this file.
 
 ## Rebuild
 
